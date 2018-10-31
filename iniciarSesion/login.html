@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons start>
+        <button ion-button icon-only>
+          <ion-icon name="person">
+            Iniciar Sesion
+          </ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>{{ translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form (submit)="doLogin()">
+    <ion-list>
+       <!--Ingrese los datos de Usuario y Contraseña-->
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Usuario' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Constraseña' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button round outline block color="primary">{{ 'Iniciar Sesion' | translate }}</button>
+          
+          <!--FALTA VALIDAR  LOS LABEL Y CONECTAR A LA BD -->
+
+           <div padding text-center>
+              <!--Si no esta registrado que se pueda registrar -->
+              <p>Aun no te has registrado? </p>
+              <a (click)="goToSignup()"> Registrate Aqui.</a>
+          </div> 
+    </div>
+
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header no-shadow>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="dark">{{ 'SKIP' | translate}}</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)">
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image" />
+      <h6 class="Slide-title">{{' ¡¡!! '}}</h6>
+      
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/slidebox-img-4.png" class="slide-image" />
+      <h6 class="slide-title">{{'Lo Estabamos Esperando!' | translate }}</h6>
+
+      <button ion-button round outlin icon-end color="dark" (click)="startApp()">
+        {{ 'Continuar' | translate }}
+        
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

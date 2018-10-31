@@ -1,0 +1,9 @@
+page-signup {
+    .toolbar-background {
+        background:rgb(243,223,197);
+        border-color: black;
+    }
+    &.activated {
+         background: aqua;
+       }
+}

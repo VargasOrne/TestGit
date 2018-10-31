@@ -1,0 +1,62 @@
+
+<ion-header>
+
+ 
+    <ion-navbar>
+        <ion-buttons start>
+          <button ion-button icon-only>
+            <ion-icon name="clipboard">
+                RESERVA
+            </ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>{{translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form (submit)="doReserva()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Nombre'}}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Apellido'}}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.surname" name="surname"></ion-input>
+      </ion-item>
+<!-- 
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Email' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>-->
+
+      <ion-item>
+        <ion-label fixed color="dark">{{'Celular '}}</ion-label>
+        <ion-input type="number" [(ngModel)]="account.telephone" name="telephone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Dia'  }}</ion-label>
+        <ion-input type="date" [(ngModel)]="account.date" name="date"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Hora'  }}</ion-label>
+        <ion-input type="time" [(ngModel)]="account.time" name="time"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label float color="dark">{{'Cant.Personas'}}</ion-label>
+        <ion-input type="number" [(ngModel)]="account.number" name="person"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button round outline block color="dark">{{ 'RESERVAR'   }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

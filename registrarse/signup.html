@@ -1,0 +1,52 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons start>
+          <button ion-button icon-only>
+            <ion-icon name="create">
+                Registro Usuario
+            </ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>{{translate}}</ion-title>
+    </ion-navbar>
+
+ 
+</ion-header>
+
+<ion-content>
+  <form (submit)="doSignup()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Nombre' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Apellido' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.surname" name="surname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Email' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{'Usuario '| translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed color="dark">{{ 'Contraseña' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button round outline block color="dark">{{ 'REGISTRARSE' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>
